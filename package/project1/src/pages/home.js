@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from 'antd';
-import { useAppDispatch, useAppSelector } from '../modules/store';
-import { fetchXxx, selectGlobal } from '../modules/global';
+import { useAppDispatch, useAppSelector } from '../models/store';
+import { fetchXxx, selectGlobal } from '../models/global';
 
 const Home = () => {
   const { user } = useAppSelector(selectGlobal);
