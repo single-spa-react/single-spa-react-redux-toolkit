@@ -4,7 +4,11 @@ const namespace = 'global';
 
 
 export const fetchXxx = createAsyncThunk(`${namespace}/xxx`, async () => {
-  // 你的逻辑
+  // 接口请求，你的逻辑等等
+  return {
+    name: 'single-spa-react-redux-toolkit',
+    age: 4
+  }
 });
 
 const initialState = {
@@ -24,9 +28,14 @@ const stateSlice = createSlice({
       .addCase(fetchXxx.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchXxx.fulfilled, (state, { payload }) => {
-        state.loading = false;
-      })
+      .addCase(fetchXxx.fulfilled, (state, { payload }) => ({
+        loading: false,
+        user: {
+          ...state.user,
+          ...payload,
+        }
+        
+      }))
       .addCase(fetchXxx.rejected, (state) => {
         state.loading = false;
       });
