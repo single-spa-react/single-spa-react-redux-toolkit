@@ -6,11 +6,14 @@
 
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import routes from './routes';
+import store from './modules/store';
 
-const renderApp = () => <BrowserRouter>
+const renderApp = () => <Provider store={store}>
+<BrowserRouter>
   <ConfigProvider locale={zhCN}>
     <Routes>
       {routes.map((route, index) => (
@@ -22,6 +25,7 @@ const renderApp = () => <BrowserRouter>
       ))}
     </Routes>
   </ConfigProvider>
-</BrowserRouter>;
+</BrowserRouter>
+</Provider>;
 
 export default renderApp;
