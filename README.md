@@ -3,7 +3,7 @@
 <div align="center">
 
 single-spa-react-redux-toolkit:
-react+single-spa-react+@reduxjs/toolkit 🚀🚀🚀, single-spa-react微前端结合状态管理库reduxjs/toolkit！
+react+single-spa-react+@reduxjs/toolkit 🚀🚀🚀, single-spa-react微前端结合状态管理库reduxjs/toolkit！并且增加了基座，可以让你每个子应用单独发布单独上线！！
 
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit#readme) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit/graphs/commit-activity) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit/blob/master/LICENSE)
 

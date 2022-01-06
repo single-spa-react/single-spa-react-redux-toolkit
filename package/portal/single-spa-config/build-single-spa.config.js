@@ -10,13 +10,13 @@ import { registerApplication, start } from 'single-spa'
 
 registerApplication(
   'project1', 
-  () => import('./package/project1/entry.js'),
+  () => import('../../project1/entry.js'),
   () => location.pathname.startsWith('/project1') ? true : false
 );
 
 registerApplication(
   'project2',
-  () => import('./package/project2/entry.js'),
+  () => import('../../project2/entry.js'),
   () => location.pathname.startsWith('/project2')  ? true : false
 );
 
