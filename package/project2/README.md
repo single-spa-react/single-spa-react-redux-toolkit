@@ -1,4 +1,4 @@
-<h1 align="center">single-spa-react-redux-toolkit/project1</h1>
+<h1 align="center">single-spa-react-redux-toolkit/project2</h1>
 
 <div align="center">
 
@@ -14,12 +14,12 @@ react+single-spa-react+@reduxjs/toolkit 🚀🚀🚀, single-spa-react微前端�
 ```bash
 $ git clone git@github.com:single-spa-react/single-spa-react-redux-toolkit.git
 $ cd single-spa-react-redux-toolkit
-$ cd project1
+$ cd project2
 $ npm install
 $ npm start
 ```
 
-打开浏览器访问 http://127.0.0.1:8080/project1/。
+打开浏览器访问 http://127.0.0.1:8080/project2/。
 
 ## 相关资料： 
 1，项目依赖包梳理：https://segmentfault.com/a/1190000019006667

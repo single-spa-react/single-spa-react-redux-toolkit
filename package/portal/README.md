@@ -3,20 +3,36 @@
 <div align="center">
 
 single-spa-react-redux-toolkit:
-react+single-spa-react+@reduxjs/toolkit 🚀🚀🚀, single-spa-react微前端结合状态管理库reduxjs/toolkit！并且增加了基座，可以让你每个子应用单独发布单独上线！！
+react+single-spa-react+@reduxjs/toolkit 🚀🚀🚀, 这是基座项目，此处决定拉取对应的子应用
 
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit#readme) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit/graphs/commit-activity) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/single-spa-react/single-spa-react-redux-toolkit/blob/master/LICENSE)
 
 </div>
 
-## ⌨️ 本地开发
+## ⌨️ 基座本地开发
 
 ```bash
 $ git clone git@github.com:single-spa-react/single-spa-react-redux-toolkit.git
 $ cd single-spa-react-redux-toolkit
+$ cd portal
 $ npm install
 $ npm start
 ```
+
+**建议：**
+```js
+```single-spa-config/index.js```
+
+if(process.env.NODE_ENV === 'dev') {
+  import('./dev-single-spa.config')
+} else {
+  import('./build-single-spa.config')
+}
+
+```
+修改为直接导出```import('./build-single-spa.config')``` 无需再单独编译子应用
+
+
 
 打开浏览器访问 http://127.0.0.1:8080/project1/。
 
