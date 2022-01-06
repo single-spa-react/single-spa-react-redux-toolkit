@@ -19,5 +19,4 @@ registerApplication(
   () => import('../../project2/entry.js'),
   () => location.pathname.startsWith('/project2')  ? true : false
 );
-
 start();

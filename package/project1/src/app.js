@@ -11,8 +11,6 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import routes from './routes';
 import store from './models/store';
-import 'antd/dist/antd.css';
-
 const renderApp = () => <Provider store={store}>
   <BrowserRouter>
     <ConfigProvider locale={zhCN}>

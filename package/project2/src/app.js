@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import routes from './routes';
-import store from './modules/store';
+import store from './models/store';
 
 const renderApp = () => <Provider store={store}>
 <BrowserRouter>

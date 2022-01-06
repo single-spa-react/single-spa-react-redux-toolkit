@@ -9,7 +9,7 @@ export const fetchXxx = createAsyncThunk(`${namespace}/xxx`, async () => {
 
 const initialState = {
   user: {
-    project2name: 'single-spa-react',
+    project2name: 'single-spa-react-project2',
     age: '4',
   }
 }

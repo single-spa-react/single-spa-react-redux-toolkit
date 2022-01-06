@@ -8,8 +8,12 @@
 
 import { registerApplication, start } from 'single-spa'
 
+/**
+ * 子应用入口js拉取 这里我们mock到public中
+ */
+
 registerApplication(
-  'project1', 
+  'project1',
   () => import('../../project1/entry.js'),
   () => location.pathname.startsWith('/project1') ? true : false
 );

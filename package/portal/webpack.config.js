@@ -1,11 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
-    'single-spa.config': './single-spa.config.js',
+    main: './src/index.js'
   },
   output: {
     publicPath: '/dist/',
@@ -15,8 +16,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.(le|c)ss$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
       }, {
         test: /\.js$/,
         exclude: [/node_modules/],
@@ -27,9 +28,16 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: 'index.html'
+    }),
   ],
   devtool: 'source-map',
   externals: [],

@@ -3,16 +3,24 @@ import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import App from './src/app.js';
 
-function domElementGetter() {
-  return document.getElementById('project2')
-}
 
-const reactLifecycle = singleSpaReact({
-  React,
-  ReactDOM,
-  rootComponent: App,  // function/class Component 函数或者类组件
-  domElementGetter,
-});
+let reactLifecycle={};
+
+if (process.env.NODE_ENV === 'development') {
+  // 本地开发 加载一些资源， 生产环境中统一由基座拉取
+  import ('antd/dist/antd.css');
+  ReactDOM.render(<App />, document.getElementById('project2'));
+} else {
+  function domElementGetter() {
+    return document.getElementById('project2')
+  }
+  reactLifecycle = singleSpaReact({
+    React,
+    ReactDOM,
+    rootComponent: App,  // function/class Component 函数或者类组件
+    domElementGetter,
+  });
+}
 
 export const bootstrap = [
   reactLifecycle.bootstrap,
@@ -25,3 +33,5 @@ export const mount = [
 export const unmount = [
   reactLifecycle.unmount,
 ];
+
+
