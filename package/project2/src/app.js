@@ -5,7 +5,7 @@
 // export default App
 
 import React from 'react';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -13,19 +13,17 @@ import routes from './routes';
 import store from './models/store';
 
 const renderApp = () => <Provider store={store}>
-<BrowserRouter>
-  <ConfigProvider locale={zhCN}>
-    <Routes>
-      {routes.map((route, index) => (
-      <Route key={index}
-        routeKey={route.key}
-        exact={route.exact}
-        path={route.path}
-        element={route.element} />
-      ))}
-    </Routes>
-  </ConfigProvider>
-</BrowserRouter>
+  <Router>
+    <ConfigProvider locale={zhCN}>
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index}
+            path={route.path}
+            element={route.element} />
+          ))}
+      </Routes>
+    </ConfigProvider>
+  </Router>
 </Provider>;
 
 export default renderApp;

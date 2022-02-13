@@ -11,7 +11,8 @@ const initialState = {
   user: {
     project2name: 'single-spa-react-project2',
     age: '4',
-  }
+  },
+  loading: false
 }
 
 // 创建带有命名空间的reducer

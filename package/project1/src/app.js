@@ -11,14 +11,13 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import routes from './routes';
 import store from './models/store';
+
 const renderApp = () => <Provider store={store}>
   <BrowserRouter>
     <ConfigProvider locale={zhCN}>
       <Routes>
         {routes.map((route, index) => (
         <Route key={index}
-          routeKey={route.key}
-          exact={route.exact}
           path={route.path}
           element={route.element} />
         ))}
