@@ -23,7 +23,7 @@ const config = {
           parse: {},
           compress: true,
           mangle: true, // Note `mangle.properties` is `false` by default.
-          module: false,
+          module: true,
           // Deprecated
           output: null,
           format: null,
@@ -84,35 +84,11 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
+          from: path.resolve(__dirname, '../src/assets'),
+          to: path.resolve(__dirname, '../dist/assets'),
           // ignore: ['.*']
         }
       ]
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      filename: 'index.html',
-      // title: 'title',
-      // chunks: ['vendor','index'],
-      // excludeChunks: ['app'],
-      // favicon: 'public/favicon.ico',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      },
-      inject: true,
-      // Note that you can add custom options here if you need to handle other custom logic in index.html
-      // To track JavaScript errors via TrackJS, sign up for a free trial at TrackJS.com and enter your token below.
-      trackJSToken: ''
     }),
     new CleanWebpackPlugin()
   ],

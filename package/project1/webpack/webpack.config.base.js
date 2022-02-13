@@ -20,6 +20,7 @@ const config = {
     publicPath: '/',
     filename: 'js/[name].js?v=[chunkhash]',
     chunkFilename: 'js/[name].js?v=[chunkhash]',
+    libraryTarget: process.env.NODE_ENV === 'production' ? 'system': ''
   },
   plugins: [
     new CopyWebpackPlugin({

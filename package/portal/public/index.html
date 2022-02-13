@@ -11,5 +11,11 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/systemjs/6.12.1/system.min.js"></script>
+    <script>
+      // 这里可以动态加载模块，可以加载远程链接
+      // AMD 依赖前置 引入index.js的时候 会先加载react和react-dom
+      System.import('/index.js');
+    </script>
   </body>
 </html>

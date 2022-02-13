@@ -65,6 +65,6 @@ module.exports = (env) => {
       hot: true,
       open: true,
     },
-    // externals: env.production ? ['react', 'react-dom'] : []
+    externals: env.production ? ['react', 'react-dom'] : []
   }
 };
