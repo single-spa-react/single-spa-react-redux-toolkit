@@ -14,13 +14,15 @@ import { registerApplication, start } from 'single-spa'
 
 registerApplication(
   'project1',
-  () => import('../../project1/entry.js'),
+  // @ts-ignore
+  () => System.import('../../project1/dist/js/main.js'),
   () => location.pathname.startsWith('/project1') ? true : false
 );
 
 registerApplication(
   'project2',
-  () => import('../../project2/entry.js'),
+  // @ts-ignore
+  () => System.import('../../project2/dist/main.js'),
   () => location.pathname.startsWith('/project2')  ? true : false
 );
 

@@ -10,13 +10,17 @@ import { registerApplication, start } from 'single-spa'
 
 registerApplication(
   'project1', 
-  () => import('../../project1/entry.js'),
+  // () => import('../../project1/entry.js'),
+  // @ts-ignore
+  () => System.import('/project1/js/main.js'),
   () => location.pathname.startsWith('/project1') ? true : false
 );
 
 registerApplication(
   'project2',
-  () => import('../../project2/entry.js'),
+  // () => import('../../project2/entry.js'),
+  // @ts-ignore
+  () => System.import('/project2/main.js'),
   () => location.pathname.startsWith('/project2')  ? true : false
 );
 start();

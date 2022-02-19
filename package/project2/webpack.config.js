@@ -2,8 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = (env) => {
-  return {
+module.exports = {
     mode: 'development',
     entry: {
       main: './entry.js'
@@ -12,7 +11,7 @@ module.exports = (env) => {
       publicPath: '/',
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
-      libraryTarget: env.production ? 'system': ''
+      libraryTarget: process.env.NODE_ENV === 'production' ? 'system': ''
     },
     module: {
       rules: [
@@ -65,6 +64,5 @@ module.exports = (env) => {
       hot: true,
       open: true,
     },
-    externals: env.production ? ['react', 'react-dom'] : []
-  }
+    externals: process.env.NODE_ENV === 'production' ? ['react', 'react-dom'] : []
 };
