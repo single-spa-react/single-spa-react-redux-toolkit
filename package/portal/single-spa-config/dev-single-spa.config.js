@@ -7,10 +7,13 @@
  */
 
 import { registerApplication, start } from 'single-spa'
-
+/**
+ * 子应用入口js拉取 这里我们将各个子应用打包后的js放入到public中来mock线上的环境
+ * 如果你需要root本地开发 联调某个子应用时，可以通过import项目入口文件的方式
+ */
 registerApplication(
   'project1', 
-  // () => import('../../project1/entry.js'),
+  // () => import('../../project1/entry.js'), // 本地开发 root 联调 project1项目时
   // @ts-ignore
   () => System.import('/project1/js/main.js'),
   () => location.pathname.startsWith('/project1') ? true : false

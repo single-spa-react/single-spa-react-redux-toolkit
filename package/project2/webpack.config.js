@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: process.env.NODE_ENV,
     entry: {
       main: './entry.js'
     },
@@ -35,10 +35,10 @@ module.exports = {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
-      new HtmlWebpackPlugin({
+      process.env.NODE_ENV === 'development' ? new HtmlWebpackPlugin({
         template: '/public/index.html',
         filename: 'index.html',
-      }),
+      }) : () => {},
     ],
     devtool: 'source-map',
     devServer: {

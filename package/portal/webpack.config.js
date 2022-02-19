@@ -44,7 +44,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     static: {
-      directory: "/public/",
+      directory: path.join(__dirname, 'public'),
       staticOptions: {},
       // Don't be confused with `devMiddleware.publicPath`, it is `publicPath` for static directory
       // Can be:

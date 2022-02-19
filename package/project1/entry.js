@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === 'development') {
   // 本地开发 加载一些资源， 生产环境中统一由基座拉取
   // @ts-ignore
   import ('antd/dist/antd.css');
-  console.log('document.getElementById()==>', <App />, document.getElementById('project1'));
   ReactDOM.render(<App />, document.getElementById('project1'));
 } else {
   function domElementGetter() {

@@ -9,20 +9,20 @@
 import { registerApplication, start } from 'single-spa'
 
 /**
- * 子应用入口js拉取 这里我们mock到public中
+ * 子应用入口js拉取 这里我们将各个子应用打包后的js放入到public中来mock线上的环境
  */
 
 registerApplication(
   'project1',
   // @ts-ignore
-  () => System.import('../../project1/dist/js/main.js'),
+  () => System.import('/project1/js/main.js'),
   () => location.pathname.startsWith('/project1') ? true : false
 );
 
 registerApplication(
   'project2',
   // @ts-ignore
-  () => System.import('../../project2/dist/main.js'),
+  () => System.import('/project2/main.js'),
   () => location.pathname.startsWith('/project2')  ? true : false
 );
 
