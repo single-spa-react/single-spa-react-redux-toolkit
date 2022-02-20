@@ -14,8 +14,19 @@ import { registerApplication, start } from 'single-spa'
 registerApplication(
   'project1', 
   // () => import('../../project1/entry.js'), // 本地开发 root 联调 project1项目时
+  // () => System.import('project1'), // 在index.html中标注清楚 
+  // <script type="systemjs-importmap">
+  //     {
+  //       "imports": {
+  //         "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.production.min.js",
+  //         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.production.min.js",
+  //         "project1": "/project1/js/main.js"
+  //       }
+  //     }
+  //   </script>
   // @ts-ignore
-  () => System.import('/project1/js/main.js'),
+  // () => System.import('/project1/js/main.js'),
+  () => System.import('project1'),
   () => location.pathname.startsWith('/project1') ? true : false
 );
 
